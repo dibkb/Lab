@@ -134,6 +134,18 @@ void Reverse(vector<int>&vec){
     cout << endl;
     display(vec);
 }
+void leftShift(vector<int>& vec, int k) {
+    cout << "Array before leftShift ";
+    cout << endl;
+    display(vec);
+    for(int i=0;i<k;i++){
+        vec.pop_back();
+        vec.insert(vec.begin(),0);
+    }
+    cout << "Array after leftShift ";
+    cout << endl;
+    display(vec);
+}
 void reverseArray(vector<int>& nums,int s, int e){
     while(s<e){
         swap(nums[s],nums[e]);
@@ -154,6 +166,7 @@ void Rotate(vector<int>& vec, int k) {
     cout << endl;
     display(vec);
 }
+
 // ---------------------------
 void isSorted(vector<int>& vec) {
     cout << "Array ";
@@ -231,49 +244,90 @@ void findMinMax(vector<int>&nums){
 }
 int main()
 {
-    // Question 1
-    // vector<int> myvecOne = {1, 2, 3, 4, 5,7,9,11,13};
-    // display(myvecOne);
+    cout << "[i] Display()";
+    cout << endl;
+    vector<int> myvecOne = {1, 2, 3, 4, 5, 7, 9, 11, 13};
+    display(myvecOne);
+    cout << endl;
+    cout << endl;
 
-    // Question 2
-    // vector<int> myvecTwo = {5, 4, 3, 2, 1};
-    // append(10, myvecTwo);
 
-    // // Question 3
-    // vector<int> myvecThree = {5, 4, 3, 2, 1};
-    // insert(3, 99, myvecThree);
+    cout << "[ii] Add/Append(x)";
+    cout << endl;
+    vector<int> myvecTwo = {5, 4, 3, 2, 1};
+    append(10, myvecTwo);
+    cout << endl;
+    cout << endl;
 
-    // // Question 4
-    // vector<int> myvecFour = {5, 4, 3, 2, 1};
-    // Delete(3, myvecFour);
+    cout << "[iii] Insert(index, x)";
+    cout << endl;
+    vector<int> myvecThree = {5, 4, 3, 2, 1};
+    insert(3, 99, myvecThree);
+    cout << endl;
+    cout << endl;
 
-    // // Question 5
-    // vector<int> myvecFive = {5, 4, 3, 2, 1};
-    // LinearSearch(0, myvecFive);
+    cout << "[iv] Delete(x)";
+    cout << endl;
+    vector<int> myvecFour = {5, 4, 3, 2, 1};
+    Delete(3, myvecFour);
+    cout << endl;
+    cout << endl;
 
-    // // Question 6
-    // vector<int> myvecSix = {5, 4, 3, 2, 1};
-    // Get(20, myvecSix);
+    cout << "[v] LinearSearch(x)";
+    cout << endl;
+    vector<int> myvecFive = {5, 4, 3, 2, 1};
+    LinearSearch(0, myvecFive);
+    cout << endl;
+    cout << endl;
 
-    // // Question 7
-    // vector<int> myvecSeven = {5, 4, 3, 2, 1};
-    // Set(3,30, myvecSeven);
+    cout << "[vi] Get(index); function to get value available on the given index";
+    cout << endl;
+    vector<int> myvecSix = {5, 4, 3, 2, 1};
+    Get(20, myvecSix);
+    cout << endl;
+    cout << endl;
 
-    // // Question 8
-    // vector<int> myvecEight = {5, 4, 3, 2, 100};
-    // Max(myvecEight);
+    cout << "[vii] Set(index, x); insert the value x at the given index";
+    cout << endl;
+    vector<int> myvecSeven = {5, 4, 3, 2, 1};
+    Set(3,30, myvecSeven);
+    cout << endl;
+    cout << endl;
 
-    // Question 9
-    // vector<int> myvecNine = {5, 4, 3, 2, 100};
-    // Min(myvecNine);
+    cout <<"[viii] Max()";
+    cout << endl;
+    vector<int> myvecEight = {5, 4, 3, 2, 100};
+    Max(myvecEight);
+    cout << endl;
+    cout << endl;
 
-    // Question 10
-    // vector<int> myvecTen = {5, 4, 3, 2, 100};
-    // Reverse(myvecTen);
+    cout <<"[ix] Min()";
+    cout << endl;
+    vector<int> myvecNine = {5, 4, 3, 2, 100};
+    Min(myvecNine);
+    cout << endl;
+    cout << endl;
 
-    // Question 12
-    // vector<int> myvecTwelve = {5, 4, 3, 2, 100};
-    // Rotate(myvecTwelve,2);
+    cout <<"[x] Reverse()";
+    cout << endl;
+    vector<int> myvecTen = {5, 4, 3, 2, 100};
+    Reverse(myvecTen);
+    cout << endl;
+    cout << endl;
+
+    cout << "[xi] Shift()";
+    cout << endl;
+    vector<int> myvecEleven = {5, 4, 3, 2, 100};
+    leftShift(myvecEleven,3);
+    cout << endl;
+    cout << endl;
+
+    cout << "[xii] Rotate()";
+    cout << endl;
+    vector<int> myvecTwelve = {5, 4, 3, 2, 100};
+    Rotate(myvecTwelve,2);
+    cout << endl;
+    cout << endl;
 
     // --------------------------------------------
     // Question 1
