@@ -177,7 +177,7 @@ void findSingleElement(vector<int>& nums) {
     }
     cout << "Single element " << result;
 }
-void findDuplicateElements (vector<int>nums) {
+void findMultipleElements (vector<int>&nums) {
     unordered_set<int> seen;
     vector<int> duplicates;
     cout << "Array ";
@@ -199,7 +199,6 @@ void twoSum(vector<int>& nums, int target) {
     cout << "Array ";
     cout << endl;
     display(nums);
-    
     unordered_map<int,int> mpp;
     for(int i = 0; i < nums.size();++i){
         int left = target - nums[i];
@@ -214,6 +213,21 @@ void twoSum(vector<int>& nums, int target) {
         }
     }
     cout << "Elements not found";
+}
+void findMinMax(vector<int>&nums){
+    cout << "Array ";
+    cout << endl;
+    display(nums);
+    int min = INT_MAX;
+    int max = INT_MIN;
+    for(auto it : nums){
+        if(it > max)
+            max = it;
+        if(it < min)
+            min = it;
+    }
+    cout << "Minimum " << min <<endl;
+    cout << "Maximum " << max <<endl;
 }
 int main()
 {
@@ -272,9 +286,13 @@ int main()
 
     // Question 3
     // vector<int> numsThree = {1,2,3,2,1,1};
-    // findDuplicateElements(numsThree);
+    // findMultipleElements(numsThree);
 
     // Question 4
-    vector<int> numsThree = {1,2,3,2,1,1};
-    twoSum(numsThree,5);
+    // vector<int> numsThree = {1,2,3,2,1,1};
+    // twoSum(numsThree,5);
+
+    // Question 5
+    // vector<int> numsFour = {11,32,30,2,4,9};
+    // findMinMax(numsFour);
 }
