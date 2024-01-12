@@ -134,19 +134,19 @@ void Reverse(vector<int>&vec){
     cout << endl;
     display(vec);
 }
-void RightShift(vector<int>& vec, int k) {
-    cout << "Array before Right Shift ";
+void leftShift(vector<int>& vec, int k) {
+    cout << "Array before leftShift ";
     cout << endl;
     display(vec);
     for(int i=0;i<k;i++){
         vec.pop_back();
         vec.insert(vec.begin(),0);
     }
-    cout << "Array after Right Shift ";
+    cout << "Array after leftShift ";
     cout << endl;
     display(vec);
 }
-void _reverseArray(vector<int>& nums,int s, int e){
+void reverseArray(vector<int>& nums,int s, int e){
     while(s<e){
         swap(nums[s],nums[e]);
         s++;
@@ -159,14 +159,89 @@ void Rotate(vector<int>& vec, int k) {
     display(vec);
     int length = vec.size();
     k = k % length;
-    _reverseArray(vec,0,length-1);
-    _reverseArray(vec,0,k-1);  
-    _reverseArray(vec,k,length-1);
+    reverseArray(vec,0,length-1);
+    reverseArray(vec,0,k-1);  
+    reverseArray(vec,k,length-1);
     cout << "Array After rotate ";
     cout << endl;
     display(vec);
 }
 
+// ---------------------------
+void isSorted(vector<int>& vec) {
+    cout << "Array ";
+    cout << endl;
+    display(vec);
+    for (int i = 0; i < vec.size() - 1; ++i) {
+        if (vec[i] > vec[i + 1]) {
+            cout << "Not sorted";
+            return;
+        }
+    }
+    cout <<"Sorted ";
+}
+void findSingleElement(vector<int>& nums) {
+    cout << "Array ";
+    cout << endl;
+    display(nums);
+    int result = 0;
+    for (int num : nums) {
+        result ^= num;
+    }
+    cout << "Single element " << result;
+}
+void findMultipleElements (vector<int>&nums) {
+    unordered_set<int> seen;
+    vector<int> duplicates;
+    cout << "Array ";
+    cout << endl;
+    display(nums);
+    for (int num : nums) {
+        // If the element is already in the set, it's a duplicate
+        if (seen.find(num) != seen.end()) {
+            duplicates.push_back(num);
+        } else {
+            seen.insert(num);
+        }
+    }
+    cout << "Duplicates ";
+    cout << endl;
+    display(duplicates);
+}
+void twoSum(vector<int>& nums, int target) {
+    cout << "Array ";
+    cout << endl;
+    display(nums);
+    unordered_map<int,int> mpp;
+    for(int i = 0; i < nums.size();++i){
+        int left = target - nums[i];
+        auto it = mpp.find(nums[i]);
+        if(it != mpp.end()){
+            cout << "Elements " << nums[it->second] <<" "<< nums[i];
+            return;
+        }
+        else
+        {
+            mpp[left] = i;
+        }
+    }
+    cout << "Elements not found";
+}
+void findMinMax(vector<int>&nums){
+    cout << "Array ";
+    cout << endl;
+    display(nums);
+    int min = INT_MAX;
+    int max = INT_MIN;
+    for(auto it : nums){
+        if(it > max)
+            max = it;
+        if(it < min)
+            min = it;
+    }
+    cout << "Minimum " << min <<endl;
+    cout << "Maximum " << max <<endl;
+}
 int main()
 {
     cout << "[i] Display()";
@@ -175,6 +250,7 @@ int main()
     display(myvecOne);
     cout << endl;
     cout << endl;
+
 
     cout << "[ii] Add/Append(x)";
     cout << endl;
@@ -200,14 +276,14 @@ int main()
     cout << "[v] LinearSearch(x)";
     cout << endl;
     vector<int> myvecFive = {5, 4, 3, 2, 1};
-    LinearSearch(4, myvecFive);
+    LinearSearch(0, myvecFive);
     cout << endl;
     cout << endl;
 
     cout << "[vi] Get(index); function to get value available on the given index";
     cout << endl;
     vector<int> myvecSix = {5, 4, 3, 2, 1};
-    Get(2, myvecSix);
+    Get(20, myvecSix);
     cout << endl;
     cout << endl;
 
@@ -242,7 +318,7 @@ int main()
     cout << "[xi] Shift()";
     cout << endl;
     vector<int> myvecEleven = {5, 4, 3, 2, 100};
-    RightShift(myvecEleven,3);
+    leftShift(myvecEleven,3);
     cout << endl;
     cout << endl;
 
@@ -252,4 +328,25 @@ int main()
     Rotate(myvecTwelve,2);
     cout << endl;
     cout << endl;
+
+    // --------------------------------------------
+    // Question 1
+    // vector<int> nums = {1,2,4,5,6,1};
+    // isSorted(nums);
+
+    // Question 2
+    // vector<int> numsTwo = {1,2,3,2,1,1};
+    // findSingleElement(numsTwo);
+
+    // Question 3
+    // vector<int> numsThree = {1,2,3,2,1,1};
+    // findMultipleElements(numsThree);
+
+    // Question 4
+    // vector<int> numsThree = {1,2,3,2,1,1};
+    // twoSum(numsThree,5);
+
+    // Question 5
+    // vector<int> numsFour = {11,32,30,2,4,9};
+    // findMinMax(numsFour);
 }
