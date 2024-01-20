@@ -1,7 +1,6 @@
 #include<iostream>
 using namespace std;
 int computeSum(int s,int e){
-    // computes and returns the sum of all the integers between "first" and "last" inclusive.
     int sum = 0;
     for (int i = s; i <= e; ++i) {
         sum += i;
@@ -9,7 +8,7 @@ int computeSum(int s,int e){
     return sum;
 }
 int smallestIntegerForSum(int goal){
-    // computes and returns the smallest positive integer n for which 1+2+3+...+n equals or exceeds the value of "goal".
+
     int i = 1;
     int sum = 0;
     while (sum < goal) {
@@ -19,7 +18,6 @@ int smallestIntegerForSum(int goal){
     return i;
 }
 int computeGcd(int a, int b){
-    // computes and returns the greatest common divisor (g.c.d.) of the arguments passed to it.
     while (b != 0) {
         int temp = b;
         b = a % b;
@@ -28,7 +26,6 @@ int computeGcd(int a, int b){
     return a;
 }
 bool checkPrime(int n){
-    // Determines whether an integer is prime
     if (n <= 1) {
         return false; 
     }
@@ -40,7 +37,6 @@ bool checkPrime(int n){
     return true;
 }
 string englishName(int num) {
-    // Prints the English name of an integer from 1 to 9
     switch (num) {
         case 1:
             return "One";
@@ -84,9 +80,131 @@ int largetIndex(vector<int>& nums){
 
     return maxIndex;
 }
+int removeDuplicates(int arr[], int n) {    
+    if (n == 0 || n == 1)
+        return n;
+    int writeIndex = 1;
+    for (int i = 1; i < n; i++) {
+        if (arr[i] != arr[writeIndex - 1]) { 
+            arr[writeIndex] = arr[i]; writeIndex++;
+        } 
+    }
+    return writeIndex;
+}
+void mergeArrays(int arr1[], int n1, int arr2[], int n2, int arr3[]) {
+    int i = 0, j = 0, k = 0;
+    while (i < n1) {
+        arr3[k++] = arr1[i++];
+    }
+    while (j < n2) {
+        arr3[k++] = arr2[j++];
+    }
+} 
+void multiplymatrix(){
+    int n;
+
+    cout << "Enter the size of the square matrices (nXn): ";
+    cin >> n;
+
+    int matrix1[n][n], matrix2[n][n], result[n][n];
+
+    cout << "Enter elements of matrix 1:\n";
+    for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+        cin >> matrix1[i][j];
+        }
+    }
+
+    cout << "Enter elements of matrix 2:\n";
+    for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+        cin >> matrix2[i][j];
+        }
+    }
+
+    // Initialize result matrix to 0
+    for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+        result[i][j] = 0;
+        }
+    }
+
+    // Perform matrix multiplication
+    for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) { 
+    for (int k = 0; k < n; k++) {
+result[i][j] += matrix1[i][k] * matrix2[k][j];
+            }
+        }
+    } 
+}
+void printmatrix(){
+    int rows, cols;
+    cout << "Enter the number of rows and columns: "; 
+    cin >> rows >> cols;
+
+    int matrix1[rows][cols], matrix2[rows][cols], result_sum[rows][cols], result_diff[rows][cols];
+
+    cout << "Enter elements of matrix 1:\n";
+    for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < cols; j++) {
+    cin >> matrix1[i][j];
+    }
+    }
+
+    cout << "Enter elements of matrix 2:\n";
+    for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < cols; j++) {
+        cin >> matrix2[i][j];
+        }
+    }
+
+// Perform addition
+    for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < cols; j++) {
+        result_sum[i][j] = matrix1[i][j] + matrix2[i][j];
+        }
+    }
+
+// Perform subtraction
+    for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < cols; j++) {
+        result_diff[i][j] = matrix1[i][j] - matrix2[i][j];
+        }
+    }
+
+// Print the results
+    cout << "\nSum of matrices:\n";
+    for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < cols; j++) {
+        cout << result_sum[i][j] << " ";
+        }
+    cout << endl;
+    }
+
+    cout << "\nDifference of matrices:\n";
+    for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < cols; j++) {
+        cout << result_diff[i][j] << " ";
+    }
+        cout << endl;
+        }
+    }
+
+Enter the size of the square matrices (nXn): 3
+Enter elements of matrix 1:
+1 2 3 4 5 6 7 8 9
+Enter elements of matrix 2:
+9 8 7 6 5 4 3 2 1
+
+Product of matrices:
+30 24 18
+84 69 54
+138 114 90 
+
+return 0;
+
 int main(){
-    // cout << computeSum(10,11);
-    vector<int>nums = {4, 5, 35,100};
-    cout << largetIndex(nums);
-    return 0;
+    multiplymatrix();
+
 }
