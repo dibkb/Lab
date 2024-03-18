@@ -1,0 +1,164 @@
+\documentclass[11pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+
+\usetheme{CambridgeUS}
+\usecolortheme{seagull}
+
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[sorting = ynt]{biblatex}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+
+\title[Water Quality Indexing]{Water Quality Indexing  Using SVM and PCA Hybrid Machine Learning Model}
+\author[Nadimetla Punnamchandu]{Nadimetla Punnamchandu  \\MCS23031 \\ \href{mcs23031@iiitl.ac.in}{\textcolor{blue}{mcs23031@iiitl.ac.in}} \\ \vspace{0.2cm}
+  Supervisor:  Dr.Souravshukla}
+\institute[IIITL]{\large{\small  Indian Institute of Information Technology,  Lucknow}\vspace{0.5cm}}
+\logo{\includegraphics[width=1cm]{Logo_IIITL.png}}
+\date{November 1, 2023}
+
+\begin{document}
+
+\maketitle
+
+% ------------- 2nd Slide --------------
+\begin{frame}{Overview}
+
+\tableofcontents
+
+\end{frame}
+\section{Introduction}
+\begin{frame}{Introduction}
+\begin{itemize}
+    \item Water and its Characteristics
+    \item Importance of Water Quality Management 
+     \item Current Scenario of WQI
+     
+\end{itemize}
+    
+\end{frame}
+% ---------------------------------------
+
+
+% --------------- 3rd Slide ----------------------
+
+\section{Water Quality Parameters}
+\begin{frame}{Water Quality Parameters}
+   \begin{itemize}
+      
+       \item \textbf{Physical:} Temperature,Turbidity,pH,Conductivity 
+
+    \item \textbf{Chemical:} Dissolved Oxygen (DO),Nutrients 
+
+    \item \textbf{Biological:} Biotic Integrity,Algal Biomass
+   
+    \item \textbf{Microbiological:} Fecal Coliform and Escherichia coli
+   
+    \item \textbf{Oxidation:} Chemical Oxygen Demand (COD) and Biochemical Oxygen Demand (BOD)
+    \item \textbf{Sediment} Sediment Quality
+    
+    
+    
+ 
+   \end{itemize}
+    
+
+\end{frame}
+\section{Drawbacks with Existing Models}
+    \begin{frame}{Drawbacks with Existing Models}
+       \begin{itemize}
+           \item Simplistic and Inadequate Metrics 
+           \item Data Averaging
+           \item \textbf{Absence of Chemical and Oxidation Parameters} 
+           \item Lack of Sensitivity
+           \item \textbf{Accuracy of Existing Models}
+           \item Inadequate Spatial and Temporal Resolution
+           \item Limited Geographical and Climatic applicability
+       \end{itemize}        
+\end{frame}
+\section{Hybrid Machine Learning Model}
+    \begin{frame}{Hybrid Machine Learning Model}
+        \begin{itemize}
+                \item \textbf{Machine Learning Models}
+           \begin{enumerate}[1]
+               \item Support Vector Machine(SVM)
+            \item Principle Component Analysis(PCA)
+            \item Random Forests(RF)
+           \end{enumerate}
+            \item \textbf{Additional Efficient Parameters}
+            \begin{enumerate}[1]
+                \item Chemical Oxygen Demand (COD),Biological Oxygen Demand (BOD) 
+            \item Climatological and Hydrological 
+            \end{enumerate}
+            
+        \end{itemize}
+        
+    \end{frame}
+    
+\section{Future Work}
+
+    \begin{frame}{Future Work}
+        \begin{itemize}
+            \item Contemplating Theoratical Model 
+            \item Approximation algorithm
+            \item Experimentation
+            \item Analysis of results 
+            \item Implementation
+        \end{itemize}
+        
+    \end{frame}
+
+\section{Literature Survey: Summary List}
+\begin{frame}{Summary List}
+        \centering
+        \scriptsize \begin{tabular}{|p{0.3cm}|p{1.3cm}|p{1.9cm}|p{1.3cm}|p{1.9cm}|p{2.2cm}|} 
+            \hline
+             \textbf{S. No.} & \textbf{Authors and Year}  &\textbf{Problem Statement/ research question(s)}  & \textbf{Material and Method}  & \textbf{Results} / Findings & \textbf{Limitations }\\ 
+             \hline
+            \cite{1} & B.Aslam, A. Maqsoom, A.H.Cheema, F. Ullah, A.Alharbi and M.Imran 2022 & Improve the efficiency and accuracy of river WQI & 
+            random trees (RT), random forest (RF), M5P, and reduced error pruning tree (REPT) & RT-ANN, BA-RT, RF, and BA-RF models Predicted Best Results & 1.COD(Chemical Oxygen Demand) and BOD(Biochemical Oxygen Demand) Not Considered 2.PCA,Deep learning algorithms can be used to improve and cross check Results\\
+            \hline
+        \end{tabular}
+
+        \label{tab:sum_list}
+
+\end{frame}
+
+\begin{frame}{Summary List (Contd...)}
+        \centering
+        \scriptsize \begin{tabular}{|p{0.3cm}|p{1.2cm}|p{1.7cm}|p{1.2cm}|p{1.7cm}|p{2cm}|}
+        \hline
+             \textbf{S. No.} & \textbf{Authors and Year}  &\textbf{Problem Statement/ research question(s)}  & \textbf{Material and Method}  & \textbf{Results} / Findings & \textbf{Limitations } \\ 
+             \hline
+            \cite{2} & A.O.Al-Sulttani, M.Al-Mukhtar, A.B. Roomi, A.A.Farooque, K.M.Khedher and Z.M. Yaseen 2021 & Accurately predicting monthly biochemical oxygen demand (BOD) values & Genetic Algorithm and Principal Component Analysis, 10-fold Cross validation check & PCA approach performed better than GA approach by producing the lowest prediction error & 1.climatological and hydrological factors not included 2.Accuracy can be improved using Hydrid Machine Learning Model \\
+             \hline
+        \end{tabular}
+
+        \label{tab:sum_list}
+
+\end{frame}
+
+
+\section{References}
+\begin{frame}{References}
+    \tiny{\begin{thebibliography}{20}
+    \bibitem{1}B.Aslam, A.Maqsoom, A.H.Cheema, F.Ullah, A. Alharbi and M.Imran, "Water Quality Management Using Hybrid Machine Learning and Data Mining Algorithms: An Indexing Approach," in IEEE Access, vol. 10, pp. 119692-119705, 2022, doi: 10.1109/ACCESS.2022.3221430.
+    \bibitem{2}
+    A.O.Al-Sulttani, M.Al-Mukhtar, A.B.Roomi, A.A. Farooque, K.M.Khedher and Z.M.Yaseen, "Proposition of New Ensemble Data-Intelligence Models for Surface Water Quality Prediction," in IEEE Access, vol. 9, pp. 108527-108541, 2021, doi: 10.1109/ACCESS.2021.3100490.
+
+    \end{thebibliography}}
+ \end{frame}
+ 
+ \section{}
+ \begin{frame}{}
+  \centering \Huge
+  \emph{\textbf{\textit{Thank You}}}
+\end{frame}
+
+\end{document}
